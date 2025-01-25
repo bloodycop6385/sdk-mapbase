@@ -3390,6 +3390,10 @@ bool CAI_BaseNPC::PreThink( void )
 		NDebugOverlay::Line( EyePosition(), m_hOpeningDoor->WorldSpaceCenter(), 255, 255, 255, false, .1 );
 	}
 
+	if ( IsCurSchedule( SCHED_NPC_FREEZE ) ) {
+		return false;
+	}
+
 	return true;
 }
 
